@@ -4,51 +4,13 @@ import ReactDom from "react-dom";
 // CSS
 import "./index.css";
 
-// variables
-const books = [
-  {
-    id: 1,
-    title: "Do Epic Shit",
-    author: "Ankur Warikoo",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/41+grDTP2FL._AC_UL604_SR200,200_.jpg",
-  },
-  {
-    id: 2,
-    title: "The Alchemist",
-    author: "Paulo Coelho",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/71aFt4+OTOL._AC_UL604_SR200,200_.jpg",
-  },
-  {
-    id: 3,
-    title: "As a Man Thinketh",
-    author: "James Allen",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL604_SR200,200_.jpg",
-  },
-  {
-    id: 4,
-    title: "The Monk Who Sold His Ferrari",
-    author: "Robin Sharma",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/61Iz2yy2CKL._AC_UL302_SR200,200_.jpg",
-  },
-  {
-    id: 5,
-    title: "Attitude Is Everything: Change Your Attitude",
-    author: "Jeff Keller",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/710jnzKlDTL._AC_UL604_SR200,200_.jpg",
-  },
-  {
-    id: 6,
-    title: "India that is Bharat",
-    author: "J Sai Deepak",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/91xPAUEuzWS._AC_UL604_SR200,200_.jpg",
-  },
-  {
-    id: 7,
-    title: "Eat That Frog!",
-    author: "Brian Tracy",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/61ZNAnIrwwL._AC_UL604_SR200,200_.jpg",
-  },
-];
+// books -- named import using curly brace
+// name must match
+import { books } from "./books";
+
+// default export -- only one per file
+// name need not be same
+import Book from "./Book";
 
 // stateless functional component
 // always return JSX
@@ -84,18 +46,32 @@ function BookList() {
 
 // props -- an object containing all properties passed to another component
 // child props -- anything that is passed between the opening and closing tag of a component
-const Book = (props) => {
-  console.log(props);
-  const { title, author, img, children } = props;
-  return (
-    <article className="book">
-      <img src={img} alt="Ikigai" />
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      {children}
-    </article>
-  );
-};
+// const Book = (props) => {
+//   // console.log(props);
+//   const { title, author, img, children } = props;
+//   const clickHandler = (e) => {
+//     // console.log(e);
+//     console.log(e.target);
+//     console.log(title);
+//   };
+//   const ComplexExample = (author) => {
+//     console.log(author);
+//   };
+//   return (
+//     <article className="book">
+//       <img src={img} alt="Ikigai" />
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//       {children}
+//       <button type="button" onClick={clickHandler}>
+//         Click Me!
+//       </button>
+//       <button type="button" onClick={() => ComplexExample(author)}>
+//         Complex Example
+//       </button>
+//     </article>
+//   );
+// };
 
 // const Image = () => {
 //   return (
